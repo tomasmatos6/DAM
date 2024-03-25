@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Optional</string>
+    <string name="build_info">Build Info Down Here</string>
+    <string name="build_info2">Build Info Here</string>
+</resources>

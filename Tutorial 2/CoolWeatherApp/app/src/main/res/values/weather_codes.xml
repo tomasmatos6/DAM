@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="weather_descriptions">
+        <item>Clear Sky</item>
+        <item>Mainly Clear</item>
+        <item>Partly Cloudy</item>
+        <item>Overcast</item>
+        <item>Fog</item>
+        <item>Depositing Rime Fog</item>
+        <item>Drizzle Light</item>
+        <item>Drizzle Moderate</item>
+        <item>Drizzle Dense</item>
+        <item>Freezing Drizzle Light</item>
+        <item>Freezing Drizzle Dense</item>
+        <item>Rain Slight</item>
+        <item>Rain Moderate</item>
+        <item>Rain Heavy</item>
+        <item>Freezing Rain Light</item>
+        <item>Freezing Rain Heavy</item>
+        <item>Snow Fall Slight</item>
+        <item>Snow Fall Moderate</item>
+        <item>Snow Fall Heavy</item>
+        <item>Snow Grains</item>
+        <item>Rain Showers Slight</item>
+        <item>Rain Showers Moderate</item>
+        <item>Rain Showers Violent</item>
+        <item>Snow Showers Slight</item>
+        <item>Snow Showers Heavy</item>
+        <item>Thunderstorm Slight Moderate</item>
+        <item>Thunderstorm Hail Slight</item>
+        <item>Thunderstorm Hail Heavy</item>
+    </string-array>
+
+    <string-array name="weather_images">
+        <item>clear_</item>
+        <item>mostly_clear_</item>
+        <item>partly_cloudy_</item>
+        <item>cloudy</item>
+        <item>fog</item>
+        <item>fog</item>
+        <item>drizzle</item>
+        <item>drizzle</item>
+        <item>drizzle</item>
+        <item>freezing_drizzle</item>
+        <item>freezing_drizzle</item>
+        <item>rain_light</item>
+        <item>rain</item>
+        <item>rain_heavy</item>
+        <item>freezing_rain_light</item>
+        <item>freezing_rain_heavy</item>
+        <item>snow_light</item>
+        <item>snow</item>
+        <item>snow_heavy</item>
+        <item>snow</item>
+        <item>rain_light</item>
+        <item>rain</item>
+        <item>rain_heavy</item>
+        <item>snow_light</item>
+        <item>snow_heavy</item>
+        <item>tstorm</item>
+        <item>tstorm</item>
+        <item>tstorm</item>
+    </string-array>
+
+    <integer-array name="weather_codes">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>45</item>
+        <item>48</item>
+        <item>51</item>
+        <item>53</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>61</item>
+        <item>63</item>
+        <item>65</item>
+        <item>66</item>
+        <item>67</item>
+        <item>71</item>
+        <item>73</item>
+        <item>75</item>
+        <item>77</item>
+        <item>80</item>
+        <item>81</item>
+        <item>82</item>
+        <item>85</item>
+        <item>86</item>
+        <item>95</item>
+        <item>96</item>
+        <item>99</item>
+    </integer-array>
+</resources>
