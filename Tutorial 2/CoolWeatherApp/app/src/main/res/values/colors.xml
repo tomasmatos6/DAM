@@ -8,4 +8,6 @@
     <color name="teal_700">#00796B</color>
     <color name="viewBG">#00B0FF</color>
     <color name="WeatherLabel">#1565C0</color>
+    <color name="textBGLight">#99C8ED</color>
+    <color name="textBGDark">#0D2B43</color>
 </resources>

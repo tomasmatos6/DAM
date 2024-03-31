@@ -8,35 +8,31 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Observer
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.gson.Gson
-import java.io.InputStreamReader
-import java.net.URL
-import java.time.LocalDateTime
-import java.time.ZoneId
 import java.util.Calendar
 import java.util.TimeZone
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-
+    private val viewModel: WeatherViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.container)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.container)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         fetchLocationAndWeatherData(false)
 
@@ -44,13 +40,17 @@ class MainActivity : AppCompatActivity() {
         myButton.setOnClickListener {
             fetchLocationAndWeatherData(true)
         }
+
+        viewModel.weatherData.observe(this) { weatherData ->
+            updateUI(weatherData)
+        }
     }
 
     private fun fetchLocationAndWeatherData(click: Boolean) {
         val lat = findViewById<TextView>(R.id.latitudeInput)
         val long = findViewById<TextView>(R.id.longitudeInput)
         if (click) {
-            fetchWeatherData(lat.text.toString().toFloat(), lat.text.toString().toFloat())
+            viewModel.fetchWeatherData(lat.text.toString().toFloat(), long.text.toString().toFloat())
             return
         }
 
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                         val longitude = it.longitude
                         lat.text = latitude.toString()
                         long.text = longitude.toString()
-                        fetchWeatherData(latitude.toFloat(), longitude.toFloat())
+                        viewModel.fetchWeatherData(latitude.toFloat(), longitude.toFloat())
                     } ?: Log.e("Location Error", "Failed to get location")
                 }
         } else {
@@ -78,34 +78,6 @@ class MainActivity : AppCompatActivity() {
             )
             fetchLocationAndWeatherData(false)
         }
-    }
-
-    private fun WeatherAPI_Call(lat: Float, long: Float): WeatherData? {
-        try {
-            val reqString = buildString {
-                append("https://api.open-meteo.com/v1/forecast?")
-                append("latitude=$lat&longitude=$long&")
-                append("current_weather=true&")
-                append("hourly=temperature_2m,weathercode,pressure_msl,windspeed_10m,wind_direction_10m")
-            }
-            val url = URL(reqString)
-            url.openStream().use {
-                return Gson().fromJson(InputStreamReader(it, "UTF-8"), WeatherData::class.java)
-            }
-        } catch (e: Exception) {
-            Log.e("ERROR", "Error trying to fetch weather data: ${e.message}")
-        }
-        return null
-    }
-
-    private fun fetchWeatherData(lat: Float, long: Float) {
-        Thread {
-            val weather = WeatherAPI_Call(lat, long)
-            runOnUiThread {
-                if (weather != null)
-                    updateUI(weather)
-            }
-        }.start()
     }
 
     @SuppressLint("SetTextI18n")
@@ -124,9 +96,6 @@ class MainActivity : AppCompatActivity() {
             windSpeed.text = request.current_weather.windspeed.toString() + " km/h"
             temperature.text = request.current_weather.temperature.toString() + "ºC"
             time.text = Calendar.getInstance(TimeZone.getTimeZone(request.timezone)).time.toString()
-            val debug1 = request.timezone
-            val debug = Calendar.getInstance(TimeZone.getTimeZone(request.timezone)).time.toString()
-            // Retrieving weather codes array from resources
             val weatherCodes = WMO_WeatherCode.getWeatherCodesArray(resources)
 
             val hora = Calendar.getInstance(TimeZone.getTimeZone(request.timezone)).get(Calendar.HOUR_OF_DAY)
