@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">DAM-Pokedex-Part1</string>
+
+    <string name="app_bottomtabbar_pokedex_title">Regions</string>
+    <string name="app_bottomtabbar_team_title">Teams</string>
+
+
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_regions">Regions</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pk_generations">%1$d Generation</string>
+    <string name="pk_id">#%1$d</string>
+    <string name="menu_home">Home View</string>
+    <string name="menu_pokedex">Pokedex</string>
+
+    <string name="pokemons">Pokemons</string>
+
+    <!-- Pokemon Details String -->
+
+    <string name="title_weight">Weight</string>
+    <string name="title_height">Height</string>
+    <string name="title_category">Category</string>
+    <string name="title_ability">Ability</string>
+    <string name="title_evolutiions">Evolutions</string>
+    <string name="title_stats">Stats</string>
+    <string name="title_hp">Hp</string>
+    <string name="title_exp">Experience</string>
+    <string name="title_spd">Speed</string>
+    <string name="title_def">Defence</string>
+    <string name="title_atk">Attack</string>
+    <string name="app_bottomtabbar_teams_title">Teams</string>
+    <string name="app_bottomtabbar_regions_title">Regions</string>
+</resources>
