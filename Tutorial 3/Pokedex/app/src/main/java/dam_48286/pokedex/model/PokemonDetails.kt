@@ -4,7 +4,7 @@ data class PokemonDetails(
     var id: Int,
     var pokemon: Pokemon,
     var description: String,
-    var weight: Float,
-    var height: Float,
+    var weight: Double,
+    var height: Double,
     var types: List<PokemonType>
 )

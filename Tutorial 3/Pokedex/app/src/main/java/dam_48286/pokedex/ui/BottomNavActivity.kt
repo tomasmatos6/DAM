@@ -53,7 +53,7 @@ abstract class BottomNavActivity : AppCompatActivity() {
     }
 
     private fun selectBottomNavigationBarItem(itemId: Int) {
-        val item = navigationView!!.menu.findItem(itemId)
+        val item = navigationView.menu.findItem(itemId)
         item.setChecked(true)
     }
 

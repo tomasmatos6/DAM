@@ -1,12 +1,16 @@
 package dam_48286.pokedex.model.mocks
 
 import dam_48286.pokedex.R
+import dam_48286.pokedex.model.Pokemon
+import dam_48286.pokedex.model.PokemonDetails
 import dam_48286.pokedex.model.PokemonRegion
 import dam_48286.pokedex.model.PokemonType
+import kotlin.math.roundToInt
+import kotlin.random.Random
 
 object MockData {
     private val POKEMONS_SIZE = 100
-
+    lateinit var pokemons: List<Pokemon>
     private var pokemonDetailDescription: String = "Pokem ipsum dolor " +
             "sit amet Crustle Grotle" +
             " Dragonair Palkia Shellder Terrakion. " +
@@ -133,8 +137,8 @@ object MockData {
 
          )*/
 
-    /*  var pokemonDetail = pokemons.map {
-          PokemonDetail(
+      /*var pokemonDetail = pokemons.map {
+          PokemonDetails(
               it,
               pokemonDetailDescription,
               pokemonTypeMock.asSequence().shuffled().take(1).toList(),
