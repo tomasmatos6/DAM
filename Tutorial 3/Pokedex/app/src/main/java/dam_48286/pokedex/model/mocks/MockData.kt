@@ -10,7 +10,6 @@ import kotlin.random.Random
 
 object MockData {
     private val POKEMONS_SIZE = 100
-    lateinit var pokemons: List<Pokemon>
     private var pokemonDetailDescription: String = "Pokem ipsum dolor " +
             "sit amet Crustle Grotle" +
             " Dragonair Palkia Shellder Terrakion. " +
@@ -64,7 +63,7 @@ object MockData {
         )
     }*/
 
-    /* var pokemons = listOf(
+    var pokemons = listOf(
          Pokemon(1,
              "bulbasaur",
              "https://raw.githubusercontent.com/PokeAPI/sprites/master" +
@@ -74,9 +73,9 @@ object MockData {
          Pokemon(4,
              "charmander",
              "https://raw.githubusercontent.com/PokeAPI/sprites/master" +
-                     "/sprites/pokemon/other/official-artwork/1.png"
+                     "/sprites/pokemon/other/official-artwork/4.png"
          ),
-         Pokemon(6,
+         Pokemon(7,
              "squirtle",
              "https://raw.githubusercontent.com/PokeAPI/sprites/master" +
                      "/sprites/pokemon/other/official-artwork/7.png",
@@ -135,20 +134,20 @@ object MockData {
                      "/sprites/pokemon/other/official-artwork/41.png"),
 
 
-         )*/
+         )
 
-      /*var pokemonDetail = pokemons.map {
+      var pokemonDetail = pokemons.map {
           PokemonDetails(
               it,
               pokemonDetailDescription,
-              pokemonTypeMock.asSequence().shuffled().take(1).toList(),
               ( Random.nextDouble(20.0,50.0) * 100.0).roundToInt() / 100.0,
               (Random.nextDouble(0.20, 2.0) * 100.0).roundToInt() / 100.0,
-              PokemonStats(),
+              pokemonTypeMock.asSequence().shuffled().take(1).toList(),
+              /*PokemonStats(),
               generateSequence {
                   PokemonEvolution(1, pokemons.random(), false,
                       0,"", 0, "")
-              }.take(Random.nextInt(1,3)).toList()
+              }.take(Random.nextInt(1,3)).toList()*/
           )
-      }*/
+      }
 }

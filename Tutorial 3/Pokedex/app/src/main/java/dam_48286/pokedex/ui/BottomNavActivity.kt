@@ -4,18 +4,20 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dam_48286.pokedex.R
 
 abstract class BottomNavActivity : AppCompatActivity() {
     lateinit var navigationView: BottomNavigationView
-
+    lateinit var binding: ViewDataBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(contentViewId)
+        this.binding = DataBindingUtil.setContentView(this, contentViewId)
+
+        //setContentView(contentViewId)
         navigationView = findViewById(R.id.navigation)
         navigationView.itemIconTintList = null
         navigationView.setOnItemSelectedListener { item ->

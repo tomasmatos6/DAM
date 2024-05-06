@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.cardview.widget.CardView
@@ -17,13 +18,24 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.request.target.Target
 import dam_48286.pokedex.R
+import dam_48286.pokedex.databinding.ItemPokemonBinding
 
 class PokemonsAdapter(
     private val pokemonList: List<Pokemon>,
-    private val context: Context
+    private val context: Context,
+    private val onItemClick: (Pokemon) -> Unit
 ) : RecyclerView.Adapter<PokemonsAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val pokemonItemBinding = ItemPokemonBinding.bind(itemView)
+
+        fun bindView(pokemon: Pokemon, itemClickListener: (Pokemon) -> Unit) {
+            pokemonItemBinding.pokemon = pokemon
+            itemView.setOnClickListener {
+                itemClickListener.invoke(pokemon)
+            }
+        }
+
         val cardView = itemView.findViewById<CardView>(R.id.cardView)
         val pkImageView = itemView.findViewById<AppCompatImageView>(R.id.pkImage)
         val pkNameTextView = itemView.findViewById<AppCompatTextView>(R.id.pkName)
@@ -39,6 +51,9 @@ class PokemonsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val pokemon = pokemonList[position]
+
+        holder.bindView(pokemon, onItemClick)
+
         Glide.with(holder.pkImageView.context)
             .asBitmap()
             .load(pokemon.imageUrl)
