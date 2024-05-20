@@ -1,27 +1,24 @@
 package dam_48286.pokedex.ui
 
 import android.content.Context
-import android.widget.AdapterView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dam_48286.pokedex.R
 import dam_48286.pokedex.databinding.ItemRegionBinding
-import dam_48286.pokedex.model.Pokemon
-import dam_48286.pokedex.model.PokemonRegion
+import dam_48286.pokedex.domain.entities.PokemonRegion
 
 class RegionAdapter(
-    private val pkRegionList: List<PokemonRegion>,
+    private val pkRegionList: List<dam_48286.pokedex.domain.entities.PokemonRegion>,
     private val context: Context,
     private val onItemClick: (PokemonRegion) -> Unit
 ) : RecyclerView.Adapter<RegionAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val regionItemBinding = ItemRegionBinding.bind(itemView)
-        fun bindView(region: PokemonRegion, itemClickedListener: (PokemonRegion) -> Unit) {
+        fun bindView(region: dam_48286.pokedex.domain.entities.PokemonRegion, itemClickedListener: (PokemonRegion) -> Unit) {
             regionItemBinding.region = region
             itemView.setOnClickListener{
                 itemClickedListener.invoke(region)
@@ -43,8 +40,8 @@ class RegionAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val region = pkRegionList[position]
         holder.bindView(region, onItemClick)
-        holder.bgImageView.setImageResource(region.bg)
-        holder.startersImageView.setImageResource(region.starters)
+        //holder.bgImageView.setImageResource(region.bg)
+        //holder.startersImageView.setImageResource(region.starters)
         holder.regionTitleTextView.text = region.name
         holder.regionSubtitleTextView.text = region.id.toString() + " Generation"
         holder.itemView.setOnClickListener {

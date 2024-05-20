@@ -2,17 +2,13 @@ package dam_48286.pokedex.ui
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.RecyclerView
 import dam_48286.pokedex.R
 import dam_48286.pokedex.databinding.ActivityRegionsBinding
-import dam_48286.pokedex.model.PokemonRegion
+import dam_48286.pokedex.domain.database.DBModule
+import dam_48286.pokedex.domain.entities.PokemonRegion
 import dam_48286.pokedex.model.RegionsViewModel
-import dam_48286.pokedex.model.mocks.MockData
+
 
 class RegionsActivity : BottomNavActivity() {
 
@@ -23,6 +19,8 @@ class RegionsActivity : BottomNavActivity() {
 
         val regionBinding = binding as ActivityRegionsBinding
         var listView = regionBinding.regionsRecyclerView
+
+        viewModel.initViewMode(DBModule.getInstance(this).regionRepository)
 
         viewModel.regions.observe(this) {
             listView.adapter = it?.let { it1 ->

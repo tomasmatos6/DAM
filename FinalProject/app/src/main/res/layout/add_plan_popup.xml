@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Button for creating a new plan -->
+    <Button
+        android:id="@+id/createNewPlanButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create New Plan" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <View
+            android:layout_width="0dp"
+            android:background="@android:color/black"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:textAlignment="center"/>
+
+        <View
+            android:layout_width="0dp"
+            android:background="@android:color/black"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <!-- Button for adding an existing plan -->
+    <Button
+        android:id="@+id/addExistingPlanButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Existing Plan" />
+
+</LinearLayout>

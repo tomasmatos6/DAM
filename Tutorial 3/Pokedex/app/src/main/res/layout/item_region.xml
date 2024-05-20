@@ -8,7 +8,7 @@
     <data>
         <variable
             name="region"
-            type="dam_48286.pokedex.model.PokemonRegion" />
+            type="dam_48286.pokedex.domain.entities.PokemonRegion" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat

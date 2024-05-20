@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Final Project</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_bottom_text">Don\'t have an account?</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="or">OR</string>
+    <string name="google">Google</string>
+    <string name="profile_icon">Profile Icon</string>
+    <string name="add_plan">Add Plan</string>
+    <string name="add_medicine">Add Medicine</string>
+    <string name="back_button">Back Button</string>
+    <string name="creator_name">Creator Name</string>
+    <string name="plan_name">Plan Name</string>
+    <string name="medicine_name">Medicine Name</string>
+    <string name="label">Label</string>
+    <string name="repeatFrequency">Once</string>
+    <string name="repeat">Repeat</string>
+    <string name="medicine_image">Medicine Image</string>
 </resources>

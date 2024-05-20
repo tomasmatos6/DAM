@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="0dp"
+            android:contentDescription="@string/back_button"
+            android:src="@drawable/arrow_back" />
+
+        <ImageView
+            android:id="@+id/menuButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:contentDescription="@string/profile_icon"
+            android:focusable="true"
+            android:src="@drawable/profile_icon" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Image View -->
+    <ImageView
+        android:id="@+id/medicineImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@id/toolbar"
+        android:src="@drawable/profile_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/medicine_image"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/medicineNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medicineImage"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/medicine_name"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@android:color/black"
+        android:gravity="center" />
+
+    <!-- Text Views Side by Side -->
+    <LinearLayout
+        android:id="@+id/textViewsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medicineNameTextView"
+        android:orientation="horizontal">
+
+        <!-- "Repeat" TextView -->
+        <TextView
+            android:id="@+id/repeatTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/repeat"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="8dp"
+            android:gravity="start" />
+
+        <!-- "Once" TextView -->
+        <TextView
+            android:id="@+id/onceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/repeatFrequency"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginEnd="8dp"
+            android:gravity="end" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/spinnersLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewsLayout"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <!-- Hour Spinner -->
+        <Spinner
+            android:id="@+id/hourSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/hours_array"
+            android:layout_marginStart="0dp"/>
+
+        <!-- Minute Spinner -->
+        <Spinner
+            android:id="@+id/minuteSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/minutes_array" />
+
+    </LinearLayout>
+
+    <!-- Text Input -->
+    <EditText
+        android:id="@+id/textInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnersLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/label" />
+
+</RelativeLayout>
