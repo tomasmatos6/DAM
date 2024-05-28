@@ -12,6 +12,8 @@ class DBModule(private val context: Context) {
 
     val pokemonDBManager : PokemonDatabase
 
+    var pokemonRepository: PokemonRepository
+
     companion object {
         // For Singleton instantiation
         @Volatile private var instance : DBModule ? = null
@@ -28,5 +30,6 @@ class DBModule(private val context: Context) {
         pokemonClient = NetworkModule.initPokemonRemoteService()
         pokemonDBManager = PokemonDatabase.getInstance(context)
         regionRepository = RegionRepository(pokemonClient,pokemonDBManager.regionDao())
+        pokemonRepository = PokemonRepository(pokemonClient,pokemonDBManager.pokemonDao())
     }
 }

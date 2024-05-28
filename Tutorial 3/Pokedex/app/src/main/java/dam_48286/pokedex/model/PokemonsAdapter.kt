@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.cardview.widget.CardView
@@ -19,9 +18,10 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.request.target.Target
 import dam_48286.pokedex.R
 import dam_48286.pokedex.databinding.ItemPokemonBinding
+import dam_48286.pokedex.domain.entities.Pokemon
 
 class PokemonsAdapter(
-    private val pokemonList: List<Pokemon>,
+    private val pokemonList: List<dam_48286.pokedex.domain.entities.Pokemon>,
     private val context: Context,
     private val onItemClick: (Pokemon) -> Unit
 ) : RecyclerView.Adapter<PokemonsAdapter.ViewHolder>() {
@@ -29,7 +29,7 @@ class PokemonsAdapter(
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val pokemonItemBinding = ItemPokemonBinding.bind(itemView)
 
-        fun bindView(pokemon: Pokemon, itemClickListener: (Pokemon) -> Unit) {
+        fun bindView(pokemon: dam_48286.pokedex.domain.entities.Pokemon, itemClickListener: (Pokemon) -> Unit) {
             pokemonItemBinding.pokemon = pokemon
             itemView.setOnClickListener {
                 itemClickListener.invoke(pokemon)

@@ -35,7 +35,8 @@ class RegionsActivity : BottomNavActivity() {
 
     private fun navigateToPokemonList(region: PokemonRegion) {
         val intent = Intent(this, PokemonListActivity::class.java)
-        intent.putExtra("region_id", region.id) // Assuming you need to pass region id
+        intent.putExtra("region_id", region.id)
+        intent.putExtra("region_name", region.name)
         startActivity(intent)
     }
 

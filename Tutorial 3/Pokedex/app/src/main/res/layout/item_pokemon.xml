@@ -8,7 +8,7 @@
     <data>
         <variable
             name="pokemon"
-            type="dam_48286.pokedex.model.Pokemon" />
+            type="dam_48286.pokedex.domain.entities.Pokemon" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat

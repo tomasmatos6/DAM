@@ -17,10 +17,14 @@ class RegionRepository(private val pokemonApi: PokemonAPI,
         if(hasRegions > 0)
         {
             val regions = regionDao.getRegions()
+            Log.d("REGIÕES DAO", regions.toString())
+            val regionsResponse = pokemonApi.fetchRegionList()
+            Log.d("REGIÕES REQUEST", pokemonApi.fetchRegionList().toString())
             return MutableLiveData(regions)
         }
         try {
             val regionsResponse = pokemonApi.fetchRegionList()
+            Log.d("REGIÕES REQUEST", pokemonApi.fetchRegionList().toString())
             val regions = regionsResponse.results?.map {
                 val regexToGetId = "/([^/]+)/?\$".toRegex()
                 var regionId = regexToGetId.find(it.url!!)?.value
