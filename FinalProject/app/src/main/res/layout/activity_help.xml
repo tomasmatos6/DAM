@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/help"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Include the Toolbar fragment -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/toolbar"
+        android:name="dam_48286.finalproject.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <!-- TextView for displaying paragraph of text -->
+    <TextView
+        android:id="@+id/paragraphTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        android:padding="16dp"
+        android:text="@string/help_text"
+        android:textColor="@color/text"
+        android:textSize="16sp" />
+</RelativeLayout>

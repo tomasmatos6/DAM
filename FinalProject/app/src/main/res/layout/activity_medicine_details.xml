@@ -1,37 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/medicine_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
+    <!-- Include the Toolbar fragment -->
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/toolbar"
+        android:name="dam_48286.finalproject.Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <ImageView
-            android:id="@+id/backButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="start"
-            android:layout_marginStart="0dp"
-            android:contentDescription="@string/back_button"
-            android:src="@drawable/arrow_back" />
-
-        <ImageView
-            android:id="@+id/menuButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="16dp"
-            android:clickable="true"
-            android:contentDescription="@string/profile_icon"
-            android:focusable="true"
-            android:src="@drawable/profile_icon" />
-
-    </androidx.appcompat.widget.Toolbar>
+        android:layout_height="?attr/actionBarSize" />
 
     <!-- Image View -->
     <ImageView
@@ -39,95 +18,186 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_below="@id/toolbar"
-        android:src="@drawable/profile_icon"
         android:layout_centerHorizontal="true"
         android:layout_margin="24dp"
         android:contentDescription="@string/medicine_image"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"
+        android:src="@drawable/edit_photo" />
 
+
+    <LinearLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medicineImage"
+        android:orientation="horizontal">
+    <!-- Medicine Name (TextView and EditText) -->
     <TextView
         android:id="@+id/medicineNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/medicineImage"
         android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:text="@string/medicine_name"
-        android:textStyle="bold"
+        android:textColor="@color/text"
         android:textSize="22sp"
-        android:textColor="@android:color/black"
-        android:gravity="center" />
+        android:textStyle="bold" />
 
-    <!-- Text Views Side by Side -->
+    <EditText
+        android:id="@+id/medicineNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints="name"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:visibility="gone"
+        android:textColor="@color/text"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Text Views Side by Side (Time and Date) -->
     <LinearLayout
         android:id="@+id/textViewsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/medicineNameTextView"
+        android:layout_below="@id/nameLayout"
         android:orientation="horizontal">
 
-        <!-- "Repeat" TextView -->
+        <!-- Time TextView -->
         <TextView
-            android:id="@+id/repeatTextView"
+            android:id="@+id/timeTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/repeat"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
             android:layout_marginStart="8dp"
-            android:gravity="start" />
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="@string/time"
+            android:textColor="@color/text"
+            android:textSize="16sp" />
 
-        <!-- "Once" TextView -->
+        <!-- Date TextView -->
         <TextView
-            android:id="@+id/onceTextView"
+            android:id="@+id/dateTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/repeatFrequency"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
             android:layout_marginEnd="8dp"
-            android:gravity="end" />
-
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="@string/date"
+            android:textColor="@color/text"
+            android:textSize="16sp" />
     </LinearLayout>
 
+    <!-- Repeat Days ImageViews -->
     <LinearLayout
-        android:id="@+id/spinnersLayout"
+        android:id="@+id/repeatDaysLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewsLayout"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        android:layout_marginTop="16dp">
+        android:gravity="center">
 
-        <!-- Hour Spinner -->
-        <Spinner
-            android:id="@+id/hourSpinner"
-            android:layout_width="0dp"
+        <ImageView
+            android:id="@+id/mondayImageView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/hours_array"
-            android:layout_marginStart="0dp"/>
+            android:layout_margin="2dp"
+            android:contentDescription="@string/monday"
+            android:src="@drawable/m_unselected" />
 
-        <!-- Minute Spinner -->
-        <Spinner
-            android:id="@+id/minuteSpinner"
-            android:layout_width="0dp"
+        <ImageView
+            android:id="@+id/tuesdayImageView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/minutes_array" />
+            android:layout_margin="2dp"
+            android:contentDescription="@string/tuesday"
+            android:src="@drawable/t_unselected" />
 
+        <ImageView
+            android:id="@+id/wednesdayImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:contentDescription="@string/wednesday"
+            android:src="@drawable/w_unselected" />
+
+        <ImageView
+            android:id="@+id/thursdayImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:contentDescription="@string/thursday"
+            android:src="@drawable/t_unselected" />
+
+        <ImageView
+            android:id="@+id/fridayImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:contentDescription="@string/friday"
+            android:src="@drawable/f_unselected" />
+
+        <ImageView
+            android:id="@+id/saturdayImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:contentDescription="@string/saturday"
+            android:src="@drawable/s_unselected" />
+
+        <ImageView
+            android:id="@+id/sundayImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:contentDescription="@string/sunday"
+            android:src="@drawable/s_unselected" />
     </LinearLayout>
 
-    <!-- Text Input -->
-    <EditText
-        android:id="@+id/textInput"
+    <LinearLayout
+        android:id="@+id/labelLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/spinnersLayout"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="@string/label" />
+        android:layout_below="@id/repeatDaysLayout"
+        android:orientation="horizontal">
+        <!-- Text View -->
+        <TextView
+            android:id="@+id/labelTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/label" />
+
+        <!-- Text Input -->
+        <EditText
+            android:id="@+id/labelTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="no"
+            android:textColor="@color/text"
+            android:hint="@string/label"
+            android:inputType="text"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:text="@string/save"
+        android:visibility="gone" />
 
 </RelativeLayout>

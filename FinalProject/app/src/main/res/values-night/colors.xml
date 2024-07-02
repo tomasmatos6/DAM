@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text2">#AAFFFFFF</color>
+    <color name="text">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#4D4D4D</color>
+    <color name="cyan">#00EDFF</color>
+    <color name="active_thumb_color">@color/white</color>
+    <color name="inactive_thumb_color">@color/white</color>
+    <color name="active_track_color">@color/cyan</color>
+    <color name="inactive_track_color">@color/gray</color>
+</resources>

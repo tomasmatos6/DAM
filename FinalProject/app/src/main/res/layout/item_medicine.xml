@@ -28,8 +28,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:text="@string/medicine_name"
+                android:textColor="@color/text"
+                android:text="Medicine Name"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginStart="8dp"/>
@@ -47,9 +47,23 @@
                     android:layout_weight="0"
                     android:layout_gravity="center_vertical"
                     android:textSize="14sp"
-                    android:textColor="@android:color/black"
-                    android:text="Mon Tue Wed |"
-                    android:layout_marginStart="8dp"/>
+                    android:textColor="@color/text"
+                    android:text="Mon Tue Wed"
+                    android:layout_marginStart="8dp"
+                    />
+
+                <TextView
+                    android:id="@+id/dividerTextView"
+                    android:layout_width="wrap_content"
+                    android:minHeight="24dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="14sp"
+                    android:textColor="@color/text"
+                    android:text="@string/divider"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"/>
 
                 <TextView
                     android:id="@+id/timeTextView"
@@ -58,9 +72,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14sp"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/text"
                     android:text="Reminder in 15h 49m"
-                    android:layout_marginStart="4dp"/>
+                    />
             </LinearLayout>
         </LinearLayout>
 
@@ -72,7 +86,7 @@
             android:layout_marginEnd="8dp"
             android:textSize="14sp"
             android:textColor="@color/black"
-            app:trackTint="@color/gray"
-            app:thumbTint="@color/white" />
+            app:trackTint="@color/switch_track_color"
+            app:thumbTint="@color/switch_thumb_color" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

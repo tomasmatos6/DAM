@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/lightModeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/light_mode"
+        android:padding="16dp"
+        android:gravity="center|center_vertical"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/text"/>
+
+    <Button
+        android:id="@+id/darkModeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dark_mode"
+        android:padding="16dp"
+        android:gravity="center|center_vertical"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/text"/>
+
+    <Button
+        android:id="@+id/systemSettingsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/system_settings"
+        android:padding="16dp"
+        android:gravity="center|center_vertical"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/text"/>
+
+</LinearLayout>

@@ -1,22 +1,73 @@
 <resources>
-    <string name="app_name">Final Project</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name" translatable="false">Med Remind</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="login_bottom_text">Don\'t have an account?</string>
-    <string name="email">Email</string>
+    <string name="email" translatable="false">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="or">OR</string>
-    <string name="google">Google</string>
-    <string name="profile_icon">Profile Icon</string>
+    <string name="google" translatable="false">Google</string>
+    <string name="profile_icon" translatable="false">Profile Icon</string>
     <string name="add_plan">Add Plan</string>
     <string name="add_medicine">Add Medicine</string>
-    <string name="back_button">Back Button</string>
-    <string name="creator_name">Creator Name</string>
+    <string name="back_button" translatable="false">Back Button</string>
+    <string name="creator_name" translatable="false">Creator Name</string>
     <string name="plan_name">Plan Name</string>
     <string name="medicine_name">Medicine Name</string>
     <string name="label">Label</string>
     <string name="repeatFrequency">Once</string>
     <string name="repeat">Repeat</string>
     <string name="medicine_image">Medicine Image</string>
+    <string name="client_id" translatable="false">675295988499-grgfbhhbpubjksu9c83v41jp1eam9nf1.apps.googleusercontent.com</string>
+    <string name="arrow_back" translatable="false">back arrow icon</string>
+    <string name="no_medicines">No medicines added yet.</string>
+    <string name="select_days">Select the days</string>
+    <string name="medicine_label">Medicine Label</string>
+    <string name="time_hint">Time</string>
+    <string name="date_hint">Date</string>
+    <string name="hourly_every">Hourly</string>
+    <string name="monday" translatable="false">M</string>
+    <string name="tuesday" translatable="false">T</string>
+    <string name="wednesday" translatable="false">W</string>
+    <string name="thursday" translatable="false">T</string>
+    <string name="friday" translatable="false">F</string>
+    <string name="saturday" translatable="false">S</string>
+    <string name="sunday" translatable="false">S</string>
+    <string name="repeat_option" translatable="false">Repeat option</string>
+    <string name="divider" translatable="false">|</string>
+    <string name="channel_name" translatable="false">Medicine Reminder Channel</string>
+    <string name="channel_description" translatable="false">Channel for medicine reminders</string>
+    <string name="CHANNEL_ID" translatable="false">medicine_reminder_channel</string>
+    <string name="setting_icon" translatable="false">settings icon\n</string>
+    <string name="new_username">New username</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="edit_profile_photo" translatable="false">edit profile photo</string>
+    <string name="logout">Logout</string>
+    <string name="help">Help</string>
+    <string name="theme">Theme</string>
+    <string name="about">About</string>
+    <string name="premium">Premium</string>
+    <string name="choose_theme">Choose Theme</string>
+    <string name="light_mode">Light Mode</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="system_settings">System Settings</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="sign_in_text">Already have an account? Sign in.</string>
+    <string name="sign_up_text">Don\'t have an account? Sign up.</string>
+    <string name="app_logo" translatable="false">App Logo</string>
+    <string name="no_plans_added_yet">No plans added yet</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="enter_plan_id">Enter Plan ID</string>
+    <string name="add">Add</string>
+    <string name="create_new_plan">Create New Plan</string>
+    <string name="add_existing_plan">Add Existing Plan</string>
+    <string name="enter_plan_name">Enter Plan Name</string>
+    <string name="create">Create</string>
+    <string name="once">Once</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="help_text">If you need any help, you can contact our support team through the following e-mail: support@medremind.com</string>
+    <string name="about_text">I am a third year student at ISEL and this is a project for the Mobile Applications Development class.</string>
 </resources>

@@ -9,13 +9,14 @@
         android:id="@+id/planIdEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Plan ID" />
+        android:textColor="@color/text"
+        android:hint="@string/enter_plan_id" />
 
     <!-- Button to add the existing plan -->
     <Button
         android:id="@+id/addPlanButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add" />
+        android:text="@string/add" />
 
 </LinearLayout>

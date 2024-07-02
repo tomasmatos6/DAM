@@ -17,6 +17,7 @@
         <ImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
+            android:contentDescription="@string/app_logo"
             android:src="@drawable/logo"
             android:scaleType="fitCenter"
             android:layout_gravity="center"
@@ -24,11 +25,11 @@
     </FrameLayout>
 
     <!-- Login Fragment Container -->
+
     <FrameLayout
         android:id="@+id/loginFragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

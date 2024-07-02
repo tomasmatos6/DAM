@@ -4,47 +4,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Toolbar with circular clickable -->
-    <androidx.appcompat.widget.Toolbar
+    <!-- Include the Toolbar fragment -->
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/toolbar"
+        android:name="dam_48286.finalproject.Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:layout_height="?attr/actionBarSize" />
 
+    <LinearLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- TextView for displaying the plan name -->
+        <TextView
+            android:id="@+id/planNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="24sp"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:longClickable="true"
+            android:tooltipText="Copy ID"/>
+
+        <!-- ImageView for the copy icon -->
         <ImageView
-            android:id="@+id/backButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="start"
-            android:layout_marginStart="0dp"
-            android:contentDescription="@string/back_button"
-            android:src="@drawable/arrow_back" />
+            android:id="@+id/copyIconImageView"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/copy_icon"
+            android:contentDescription="copy icon" />
+    </LinearLayout>
 
-        <ImageView
-            android:id="@+id/menuButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="16dp"
-            android:clickable="true"
-            android:contentDescription="@string/profile_icon"
-            android:focusable="true"
-            android:src="@drawable/profile_icon" />
-
-    </androidx.appcompat.widget.Toolbar>
 
     <!-- RecyclerView for displaying list of cards -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
+        android:layout_height="638dp"
+        android:layout_below="@id/nameLayout"
+        android:layout_marginTop="8dp"
         android:padding="8dp" />
 
-    <!-- Button to add a plan -->
+    <!-- TextView for no medicines message -->
+    <TextView
+        android:id="@+id/noMedicinesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_medicines"
+        android:textSize="18sp"
+        android:textColor="@color/text"
+        android:visibility="gone"
+        android:layout_centerInParent="true" />
+
+    <!-- Button to add a medicine -->
     <Button
-        android:id="@+id/addPlanButton"
+        android:id="@+id/addMedicineButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

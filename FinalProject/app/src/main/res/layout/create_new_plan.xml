@@ -9,13 +9,15 @@
         android:id="@+id/planNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Plan Name" />
+        android:autofillHints="no"
+        android:hint="@string/enter_plan_name"
+        android:inputType="text" />
 
     <!-- Button to create the new plan -->
     <Button
         android:id="@+id/createPlanButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create" />
+        android:text="@string/create" />
 
 </LinearLayout>
